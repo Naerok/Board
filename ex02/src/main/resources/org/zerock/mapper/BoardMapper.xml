@@ -27,6 +27,4 @@
 	<delete id="delete">
 		DELETE FROM tbl_board WHERE bno = #{bno}
 	</delete>
-	
-	
 </mapper>
