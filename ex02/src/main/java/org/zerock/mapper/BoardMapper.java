@@ -17,4 +17,5 @@ public interface BoardMapper {
 	int delete(Long bno);
 	
 	int update(BoardVO board);
+	
 }

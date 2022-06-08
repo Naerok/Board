@@ -61,5 +61,18 @@ public class BoardMapperTests {
 		log.info(deleteNum);
 	}
 	
+	@Test
+	public void testUpdate() {
+		
+		BoardVO vo = new BoardVO();
+		vo.setTitle("titled");
+		vo.setContent("contented");
+		vo.setWriter("한글한글");
+		
+		log.info("update count: " + vo);
+		
+	}
+	
+	
 	
 }
