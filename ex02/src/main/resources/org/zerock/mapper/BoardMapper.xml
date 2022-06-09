@@ -33,7 +33,7 @@
 		set title = #{title},
 		content = #{content},
 		writer = #{writer},
-		updatedate = sysdate,
+		updatedate = sysdate
 		WHERE bno = #{bno}
 	</update>
 </mapper>
