@@ -1,5 +1,7 @@
 package org.zerock.mapper;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.spi.LoggerFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,15 +13,16 @@ import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-@Log4j
 public class BoardMapperTests {
+    // private final Logger LOGGER = LoggerFactory.getLogger(BoardMapperTests.class.getName());
+
 	
 	@Autowired
 	private BoardMapper boardMapper;
 	
 	@Test
 	public void testGetList() {
-		log.info("------------------------");
+	//	log.info("------------------------");
 		boardMapper.getList();
 	}
 	
@@ -32,8 +35,8 @@ public class BoardMapperTests {
 		
 		boardMapper.insert(vo);
 		
-		log.info("------------------------------------");
-		log.info("alter insert" + vo.getBno());
+	//	log.info("------------------------------------");
+		//log.info("alter insert" + vo.getBno());
 	}
 	
 	@Test
@@ -44,21 +47,21 @@ public class BoardMapperTests {
 		vo.setWriter("writer테스트");
 		
 		boardMapper.insertSelectKey(vo);
-		log.info("------------------------------------");
-		log.info("alter insert selectKey  "+ vo.getBno());
+		//log.info("------------------------------------");
+	//	log.info("alter insert selectKey  "+ vo.getBno());
 	}
 	
 	@Test
 	public void testRead() {
 		BoardVO vo  = boardMapper.read(3L);
-		log.info(vo);
+	//	log.info(vo);
 	}
 	
 	
 	@Test
 	public void testDelete() {
-		int deleteNum = boardMapper.delete(1L);
-		log.info(deleteNum);
+		int deleteNum = boardMapper.delete(2L);
+		//log.info(deleteNum);
 	}
 	
 	@Test
@@ -69,8 +72,8 @@ public class BoardMapperTests {
 		vo.setContent("contented");
 		vo.setWriter("한글한글");
 		
-		log.info("update count: " + vo);
-		
+		//System.out.println("update count: " + vo);
+		//LOGGER.info("update count: "+vo);
 	}
 	
 	
