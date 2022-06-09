@@ -18,8 +18,10 @@ public class TimeMapperTests {
 	
 	@Test
 	public void testGetTime() {
-		log.info("test Get Time....................");
-		log.info(timeMapper.getTime());
+		/*
+		 * log.info("test Get Time....................");
+		 * log.info(timeMapper.getTime());
+		 */
 	}
 
 }
