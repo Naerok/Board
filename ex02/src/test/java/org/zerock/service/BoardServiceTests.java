@@ -43,7 +43,6 @@ public class BoardServiceTests {
 		
 		logger.info("bno test  :  " +bno);
 		
-		
 	}
 	
 
