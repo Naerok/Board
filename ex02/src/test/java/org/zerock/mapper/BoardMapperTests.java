@@ -9,11 +9,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
 
+import lombok.extern.log4j.Log4j;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+@Log4j
 public class BoardMapperTests {
     // private final Logger LOGGER = LoggerFactory.getLogger(BoardMapperTests.class.getName());
-	private Logger logger = LogManager.getLogger(BoardMapperTests.class);
+//	private Logger logger = LogManager.getLogger(BoardMapperTests.class);
 	
 	@Autowired
 	private BoardMapper boardMapper;
@@ -21,7 +24,7 @@ public class BoardMapperTests {
 	@Test
 	public void testGetList() {
 	//	log.info("------------------------");
-		logger.info("로그테스트  "+boardMapper.getList());
+	//	logger.info("로그테스트  "+boardMapper.getList());
 		boardMapper.getList();
 	}
 	
@@ -34,8 +37,8 @@ public class BoardMapperTests {
 		
 		boardMapper.insert(vo);
 		
-	//	log.info("------------------------------------");
-		//log.info("alter insert" + vo.getBno());
+		log.info("------------------------------------");
+		log.info("alter insert" + vo.getBno());
 	}
 	
 	@Test
