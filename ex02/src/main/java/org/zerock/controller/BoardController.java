@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.BoardVO;
 import org.zerock.service.BoardService;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
 @RequestMapping("/board/*")
+@RequiredArgsConstructor
 public class BoardController {
 	private Logger logger = LogManager.getLogger(BoardController.class);
 	
@@ -24,7 +27,7 @@ public class BoardController {
 		logger.info("list..............");
 		model.addAttribute("list", service.getList());
 	}
-	
+	 
 	@PostMapping("/register")
 	public void register(BoardVO board) {
 		logger.info("board: " + board);

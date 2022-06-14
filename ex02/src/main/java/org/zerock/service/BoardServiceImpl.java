@@ -7,25 +7,22 @@ import org.springframework.stereotype.Service;
 import org.zerock.domain.BoardVO;
 import org.zerock.mapper.BoardMapper;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class BoardServiceImpl implements BoardService{
 	
+	@Autowired
 	private final BoardMapper mapper;
 	
 	@Override
 	public String toString() {
 		return "BoardServiceImpl [mapper=" + mapper + "]";
 	}
-
-	@Autowired
-	public BoardServiceImpl(BoardMapper mapper) {
-		super();
-		this.mapper = mapper;
-	}
-
 	
 	@Override
-	public Long register(BoardVO board) {
+	public long register(BoardVO board) {
 		mapper.insertSelectKey(board);
 		return board.getBno();
 	}

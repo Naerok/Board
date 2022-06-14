@@ -14,9 +14,11 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
+@RequiredArgsConstructor
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
@@ -28,7 +30,7 @@ public class BoardControllerTests {
 	
 	private Logger logger = LogManager.getLogger(BoardControllerTests.class);
 	
-	@Setter(onMethod_ = {@Autowired} )
+	@Autowired
 	private WebApplicationContext ctx;
 	
 	private MockMvc mockMvc;
@@ -40,9 +42,27 @@ public class BoardControllerTests {
 	
 	@Test
 	public void testList() throws Exception{
-		logger.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
-		.andReturn()
-		.getModelAndView()
-		.getModelMap());
+		logger.info(
+				mockMvc.perform(
+						MockMvcRequestBuilders.get("/board/list"))
+						.andReturn()
+						.getModelAndView()
+						.getModelMap()
+						);
+	}
+	
+	@Test
+	public void testRegister() throws Exception{
+		logger.info(
+				mockMvc.perform(
+						MockMvcRequestBuilders.post("/board/register")
+						.param("title", "title테스트")
+						.param("content", "content테스트")
+						.param("writer", "chg10")
+						)
+				.andReturn()
+//				.getModelAndView()
+//				.getModelMap()
+				);
 	}
 }
