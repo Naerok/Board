@@ -23,7 +23,7 @@ public class BoardMapperTests {
 	
 	@Test
 	public void testGetList() {
-	//  log.info("------------------------");
+	// log.info("------------------------");
 	//	logger.info("로그테스트  "+boardMapper.getList());
 		boardMapper.getList();
 	}

@@ -7,12 +7,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zerock.domain.BoardVO;
+import org.zerock.service.BoardService;
 
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
-	
 	private Logger logger = LogManager.getLogger(BoardController.class);
+	
+	
+	private BoardService service;
 	
 	@GetMapping("/list")
 	public void list(Model model) {
