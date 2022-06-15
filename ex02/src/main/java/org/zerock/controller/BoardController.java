@@ -27,15 +27,15 @@ public class BoardController {
 		logger.info("list..............");
 		model.addAttribute("list", service.getList());
 	}
-	 
-	@PostMapping("/register")
-	public void register(BoardVO board) {
-		logger.info("board: " + board);
-		
-		Long bno = service.register(board);
-		
-		logger.info("BNO: "+bno);
-	}
+//	 
+//	@PostMapping("/register")
+//	public void register(BoardVO board) {
+//		logger.info("board: " + board);
+//		
+//		long bno = service.register(board);
+//		
+//		logger.info("BNO: "+bno);
+//	}
 	
 
 }
