@@ -14,12 +14,12 @@ import lombok.ToString;
 @ToString
 public class BoardServiceImpl implements BoardService{
 	
-	private final BoardMapper mapper;
+	private BoardMapper mapper;
+
 
 	@Override
 	public void register(BoardVO board) {
 		mapper.insert(board);
-		
 	}
 
 	@Override
